@@ -1,0 +1,55 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Мое приложение WPF" Height="250" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/icons8-галочка.gif">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black"/>
+            <GradientStop Color="#FFF7B13F" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid Margin="10,10,10,10"  RenderTransformOrigin="0.5,0.498" OpacityMask="#FF0CFD00">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="-0.008"/>
+                <TranslateTransform Y="0.001"/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Label x:Name="parameter_lbl" Content="Список параметров:" HorizontalAlignment="Left" Margin="6,0,0,0" VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" Foreground="White"/>
+        <ListBox  Grid.Row="2" Grid.Column="0" x:Name="listElem"/>
+        <StackPanel HorizontalAlignment="Left" Height="122" Margin="0,5,0,0" VerticalAlignment="Top" Width="178" Grid.Column="1" Grid.Row="1">
+            <TextBox x:Name="parameter_add_tb" TextChanged="parameter_add_tb_TextChanged" Width="168">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <Button x:Name="add_btn" Content="Добавить" Margin="0,5,0,2" Width="174" Click="add_btn_Click">
+                <Button.Style>
+                    <Style/>
+                </Button.Style>
+            </Button>
+            <Button x:Name="Clear_btn" Content="Очистка списка" Margin="0,5,0,2" Width="174" Click="Clear_btn_Click" RenderTransformOrigin="0.028,0.465" Background="#FFDDDDDD"/>
+            <Button x:Name="exit_btn" Content="Выход" Margin="0,5,0,2" Width="174" Click="exit_btn_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
